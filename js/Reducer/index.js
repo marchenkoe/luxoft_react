@@ -31,11 +31,13 @@ export function grid(state = gridState, action) {
     switch (action.type) {
         case "TOGGLE_ACTIVE":
             let newState = {...state};
-            newState[action.value].active = !newState[action.value].active;
+            newState.records[action.value].active = !newState.records[action.value].active;
             return newState;
         case "FILTER":
+            console.log("action ", action)
+            let text;
             const newFiltered = state.records.filter((record) => {
-                const text = action.payload.toLowerCase();
+                text = action.payload.toLowerCase();
                 return record.firstName.toLowerCase().includes(text);
         })
             return {

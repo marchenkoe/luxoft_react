@@ -5,6 +5,7 @@ import {SummaryActive} from "./summaries";
 import {GridFilter} from "./grid-filter";
 
 
+
 /*export*/ class GridRecord extends React.Component {
     showUserDetails(e) {
         e.preventDefault();
@@ -99,6 +100,12 @@ GridRecord.defaultProps = {record: {firstName: "N/A", lastName: "N/A", active: f
         // this.setState({records: dataSource})
     }
 
+    // handleChange(arg1, arg2, arg3, arg4) {
+    //     console.log(arg1, arg2, arg3, arg4)
+    //     let a = arg1;
+    // }
+
+
     render() {
         console.log("!!this.props ", this.props)
         // let filteredRecords = this.props.records;//
@@ -127,6 +134,8 @@ GridRecord.defaultProps = {record: {firstName: "N/A", lastName: "N/A", active: f
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Active</th>
+                        {/*<th><input onChange={this.handleChange.bind(this)}/></th>*/}
+
                     </tr>
                     </thead>
                     <tbody>{records}</tbody>
